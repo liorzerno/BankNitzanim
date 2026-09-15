@@ -10,8 +10,8 @@ def background():
     pygame.display.flip()
 
 def start_button():
-    font = pygame.font.SysFont("Comic Sans MS", 30)
-    text = font.render("CREATE BANK \nACCOUNT", False, consts.WHITE)
+    font = pygame.font.SysFont("Ariel", 30)
+    text = font.render("CREATE BANK \n    ACCOUNT", False, consts.WHITE)
     button = pygame.Rect(consts.BUTTON_X, consts.BUTTON_Y, consts.BUTTON_WIDTH, consts.BUTTON_HEIGHT)
     screen.blit(text, button)
 

@@ -21,9 +21,8 @@ def handle_user_events():
        elif state["state"] != consts.RUNNING_STATE:
            continue
 
-
+draw_game()
 while state["is_window_open"]:
    handle_user_events()
    pygame.init()
-   draw_game()
    pygame.display.flip()

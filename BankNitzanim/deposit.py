@@ -99,8 +99,8 @@ def draw_deposit(deposit: dict, day_in_game: int):
     :return: deletes all stats from the deposit
     :return: an amount to add to the checking account
     """
-    money_earned = deposit["amount_in_deposit"] + calc_interest(deposit)
-    deposit = {}
+    money_earned = deposit["amount_in_deposit"] + calc_interest(deposit, day_in_game)
+    deposit.clear()
     return money_earned
 
 

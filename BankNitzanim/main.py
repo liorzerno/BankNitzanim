@@ -2,7 +2,7 @@ import pygame
 from screen import *
 import consts
 import time
-
+#
 
 state = {
    "is_window_open": True,

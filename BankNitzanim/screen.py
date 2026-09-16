@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import ttk
 import PIL
+from PIL import Image
 
 window = tkinter.Tk()
 

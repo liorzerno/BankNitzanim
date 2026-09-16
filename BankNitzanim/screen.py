@@ -26,18 +26,14 @@ def skip_day(screen):
     date_label.pack(pady=50)
 
 
-def image(screen):
-    img = Image.open("alien_teacher.png")
-    screen.create_image(0, 0, image=img)
-    screen.pack()
-    #url = https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
+# def image(screen):
+#     img = ImageTk.PhotoImage(Image.open("alien_teacher.png"))
+#     panel = tkinter.Label(screen, image=img)
+#     panel.pack(side="bottom", fill="both",expand="yes")
 
- def plus_button(screen):
-     btn = ttk.Button(window, text="+", command=skip_day(screen), style="Big.TButton", width=18)
-     btn.place(relx=0.5, rely=0.5, anchor="center")
+
 window.geometry("800x600")
 header(window)
-image(window)
 window.configure(bg="lavenderblush")
 
 
@@ -47,13 +43,19 @@ def open_new_window():
     window2.geometry("800x600")
     window2.configure(bg="lavenderblush")
     header(window2)
-    image(window)
     skip_day(window2)
     sum_money = tkinter.Label(window2, text="0", font=("Helvetica", 30, "bold"), fg="black")
     sum_money.pack(pady=(30, 0))
+    deposit_btn = ttk.Button(window2, text="Deposit", command=deposit_window, style="Big.TButton", width=18)
+    deposit_btn.pack(pady=(30, 0))
 
     window2.mainloop()
 
+def deposit_window():
+    window3 = tkinter.Tk()
+    window3.geometry("800x600")
+    window3.configure(bg="lavenderblush")
+    header(window3)
 
 
 style = ttk.Style()

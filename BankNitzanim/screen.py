@@ -1,7 +1,9 @@
-import datetime
 import tkinter
-from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, filedialog
+import PIL
+import tkinter
+from tkinter import PhotoImage
+from PIL import Image, ImageTk
 import PIL
 from PIL import Image, ImageTk
 from datetime import *
@@ -9,6 +11,8 @@ from datetime import *
 from PIL.ImageChops import screen
 
 window = tkinter.Tk()
+window.title("Bank Nitzanim")
+
 
 def header(screen):
     header_frame = tkinter.Frame(screen, bg="limegreen", height=50)
@@ -26,12 +30,14 @@ def image(screen):
     img = Image.open("alien_teacher.png")
     screen.create_image(0, 0, image=img)
     screen.pack()
+    #url = https://stackoverflow.com/questions/10133856/how-to-add-an-image-in-tkinter
 
  def plus_button(screen):
      btn = ttk.Button(window, text="+", command=skip_day(screen), style="Big.TButton", width=18)
      btn.place(relx=0.5, rely=0.5, anchor="center")
 window.geometry("800x600")
 header(window)
+image(window)
 window.configure(bg="lavenderblush")
 
 
@@ -41,6 +47,7 @@ def open_new_window():
     window2.geometry("800x600")
     window2.configure(bg="lavenderblush")
     header(window2)
+    image(window)
     skip_day(window2)
     sum_money = tkinter.Label(window2, text="0", font=("Helvetica", 30, "bold"), fg="black")
     sum_money.pack(pady=(30, 0))

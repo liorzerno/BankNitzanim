@@ -26,3 +26,6 @@ BUTTON_HEIGHT = 150
 DEPOSIT_TEXT = "A deposit is money added to a bank account, for safekeeping or to earn interest.\n It can also refer to a partial payment to secure goods or services, \n such as a security deposit on a rental property."
 LOAN_TEXT = "An amount of money that is borrowed from a bank and has to be paid back, \n usually together with an extra amount of money that you have to pay as a charge for borrowing"
 INVEST_TEXT = "Investing is the act of putting your money into something with the hope that it will grow over time.\n Think of it like planting a tree. \n You plant a seed (your money), take care of it, and over time, it grows into a big tree (more money)."
+
+
+ALIEN_TEACHER_IMG = "alien_teacher.png"

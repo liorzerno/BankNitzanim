@@ -3,12 +3,12 @@
 # import random
 # import time
 # import matplotlib
-import datetime
+from datetime import date
 import consts
 
 
 def create_deposit(checking_account: int, deposit_type: int, interest_type: int, interest_rate: float,
-                   deposit_time=int, start_date= datetime):
+                   deposit_time: int, start_date: date):
     """
     :param checking_account: the checking account from which the money will come
     :param deposit_type: 0 or 1 as set in consts - a singular deposit or a monthly deposit
@@ -30,7 +30,7 @@ def create_deposit(checking_account: int, deposit_type: int, interest_type: int,
     return deposit
 
 
-def calc_day_difference(deposit: dict, day_in_game=datetime):
+def calc_day_difference(deposit: dict, day_in_game: date):
     """
     :param deposit: the deposit
     :param day_in_game: the day in the game
@@ -66,7 +66,7 @@ def add_to_deposit(deposit: dict):
     return deposit["initial_deposit"]
 
 
-def can_draw_deposit(deposit: dict, day_in_game=datetime):
+def can_draw_deposit(deposit: dict, day_in_game: date):
     """
     :param deposit: the deposit we want to draw into the checking account
     :param day_in_game: the day in the game
@@ -81,7 +81,7 @@ def can_draw_deposit(deposit: dict, day_in_game=datetime):
         return False
 
 
-def can_add_interest(deposit: dict, day_in_game=datetime):
+def can_add_interest(deposit: dict, day_in_game: date):
     """
     :param deposit: the deposit we want to add interest to
     :param day_in_game: the day in the game
@@ -93,7 +93,7 @@ def can_add_interest(deposit: dict, day_in_game=datetime):
         return False
 
 
-def calc_interest(deposit: dict, day_in_game=datetime):
+def calc_interest(deposit: dict, day_in_game: date):
     """
     :param deposit: the deposit to calc interest from
     :param day_in_game: the day in the game
@@ -106,12 +106,13 @@ def calc_interest(deposit: dict, day_in_game=datetime):
     return interest_earned
 
 
-def draw_deposit(deposit: dict):
+def draw_deposit(deposit: dict, day_in_game: date):
     """
     :param deposit: the deposit to be drawn into the checking account
+    :param day_in_game: the day in the game
     :return: deletes all stats from the deposit
     :return: an amount to add to the checking account
     """
-    money_earned = deposit["amount_in_deposit"] + calc_interest(deposit)
+    money_earned = deposit["amount_in_deposit"] + calc_interest(deposit, day_in_game)
     deposit.clear()
     return money_earned
